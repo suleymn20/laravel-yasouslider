@@ -24,14 +24,13 @@ class Homepage extends Controller
           $rules=[
             'title'=>'min:3|required',
             'author'=>'min:3|required',
-            'image'=>'required|image|mimes:jpeg,png,jpg|max:4000'
+
           ];
       $validate=Validator::make($request->post(),$rules);
 
       if($validate->fails()){
         return redirect()->route('slider.add')->withErrors($validate)->withInput();
       }
-
 
           $last=Slider::orderBy('order','desc')->first();
           $slider=new Slider;
@@ -49,6 +48,7 @@ class Homepage extends Controller
             $slider->image='uploads/'.$imageName;
           }
           $slider->save();
+          toastr()->success('Sliderınız başarıyla ekiplere gönderildi', 'Başarılı');
           return redirect()->route('slider.add');
 
     }

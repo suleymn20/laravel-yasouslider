@@ -50,7 +50,8 @@
     });
 
 </script>
-
+@toastr_js<br>
+@toastr_render
 </body>
 
 </html>
