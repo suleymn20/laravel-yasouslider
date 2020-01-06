@@ -23,6 +23,7 @@ class Sliders extends Migration
             $table->string('authorslug');
             $table->integer('status')->default(0);
             $table->integer('order');
+            $table->ipAddress('ipadres')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

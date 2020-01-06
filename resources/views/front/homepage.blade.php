@@ -1,5 +1,5 @@
 @extends('front.layouts.master')
-@section('title','SNU Blog')
+@section('title','YasouSlider')
 
 @section('content')
 <header>
@@ -7,18 +7,18 @@
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           @foreach ($sliders as $slider)
-            <li data-target="#carouselExampleIndicators" data-slide-to="{{$slider->order}}" class="@if($slider->order==0) active @endif"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="{{$slider->order}}" class="@if($slider->order==1) active @endif"></li>
           @endforeach
         </ol>
         <div class="carousel-inner">
             @foreach ($sliders as $slider)
-            <div class="carousel-item @if($slider->order==0) active @endif" style="background-image: url('{{$slider->image}}')">
+            <div class="carousel-item @if($slider->order==1) active @endif" style="background-image: url('{{$slider->image}}')">
                 <div class="carousel-caption d-none d-md-block">
                   <div class="fixed-bottom text-right muted">
-                      <p>{{$slider->author}}</p>
+                      <p>&copy {{$slider->author}}&nbsp</p>
                   </div>
                   <div class="fixed-bottom text-left muted">
-                    <p>{{$slider->title}}</p>
+                    <p>&nbsp{{$slider->title}}</p>
                   </div>
                 </div>
             </div>
