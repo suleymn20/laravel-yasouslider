@@ -11,6 +11,7 @@ use App\Models\Slider;
 class Homepage extends Controller
 {
     public function index(){
-      return view('front.homepage');
+      $sliders=Slider::orderBy('order','ASC')->get();
+      return view('front.homepage',compact('sliders'));
     }
 }

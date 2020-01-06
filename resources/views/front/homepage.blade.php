@@ -6,29 +6,24 @@
 
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          @foreach ($sliders as $slider)
+            <li data-target="#carouselExampleIndicators" data-slide-to="{{$slider->order}}" class="@if($slider->order==0) active @endif"></li>
+          @endforeach
         </ol>
         <div class="carousel-inner">
-            <div class="carousel-item active" style="background-image: url('http://placehold.it/1900x1080')">
+            @foreach ($sliders as $slider)
+            <div class="carousel-item @if($slider->order==0) active @endif" style="background-image: url('{{$slider->image}}')">
                 <div class="carousel-caption d-none d-md-block">
-                    <h3>Third Slide</h3>
-                    <p>This is a description for the third slide.</p>
+                  <div class="fixed-bottom text-right muted">
+                      <p>{{$slider->author}}</p>
+                  </div>
+                  <div class="fixed-bottom text-left muted">
+                    <p>{{$slider->title}}</p>
+                  </div>
                 </div>
             </div>
-            <div class="carousel-item " style="background-image: url('http://placehold.it/1900x1080')">
-                <div class="carousel-caption d-none d-md-block">
-                    <h3>Third Slide</h3>
-                    <p>This is a description for the third slide.</p>
-                </div>
-            </div>
-            <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
-                <div class="carousel-caption d-none d-md-block">
-                    <h3>Third Slide</h3>
-                    <p>This is a description for the third slide.</p>
-                </div>
-            </div>
+          @endforeach
+
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
