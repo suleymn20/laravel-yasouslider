@@ -14,8 +14,9 @@ class Homepage extends Controller
 {
 
     public function index(){
-      $sliders=Slider::orderBy('order','ASC')->where('status',1)->get();
-      return view('front.homepage',compact('sliders'));
+      $sliders=Slider::orderBy('order','desc')->where('status',1)->get();
+      $sliderorder=Slider::latest()->first();
+      return view('front.homepage',compact('sliders','sliderss'));
     }
     public function slideradd(){
       return view('front.slideradd');
