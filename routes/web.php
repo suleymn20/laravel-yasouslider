@@ -1,4 +1,16 @@
 <?php
+/*
+|--------------------------------------------------------------------------
+| Back
+|--------------------------------------------------------------------------
+|
+*/
+
+Route::get('admin/panel','Back\Dashboard@index')->name('admin.dashboard');
+Route::prefix('admin')->name('admin.')->group(function(){
+  Route::get('giris','Back\AuthController@login')->name('login');
+  Route::post('giris','Back\AuthController@loginPost')->name('login.post');
+});
 
 /*
 |--------------------------------------------------------------------------

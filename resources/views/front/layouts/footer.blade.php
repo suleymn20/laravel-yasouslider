@@ -7,7 +7,6 @@
 <!-- Custom scripts for this template -->
 <script src="{{asset('front/')}}/js/clean-blog.min.js"></script>
 <script type="text/javascript">
-
     $(document).ready(function (e) {
 
         $.ajaxSetup({
@@ -50,7 +49,7 @@
     });
 
 </script>
-@toastr_js<br>
+@toastr_js
 @toastr_render
 </body>
 

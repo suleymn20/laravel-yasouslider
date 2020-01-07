@@ -2,8 +2,6 @@
 @section('title','YasouSlider')
 
 @section('content')
-<header>
-
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           @foreach ($sliders as $slider)
@@ -23,7 +21,6 @@
                 </div>
             </div>
           @endforeach
-
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -34,5 +31,4 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-</header>
 @endsection
