@@ -18,13 +18,13 @@
       <div class="row">
         <div class="col-md-6">
       <div class="form-group">
-        <label>Konusu</label>
+        <label>Slider Adı</label>
         <input  value="{{old('title')}}" type="text" name="title" class="form-control" required></input>
       </div>
     </div>
       <div class="col-md-6">
       <div class="form-group">
-        <label>Adı</label>
+        <label>Gönderen Kişi Adı</label>
         <input  value="{{old('author')}}" type="text" name="author" class="form-control" required></input>
       </div>
             </div>

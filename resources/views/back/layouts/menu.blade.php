@@ -36,32 +36,19 @@
 
       <!-- Makale Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link  @if(Request::segment(2)=='makaleler')in @else collapsed @endif " href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-fw fa-edit"></i>
-          <span>Makaleler</span>
+        <a class="nav-link  @if(Request::segment(2)=='sliders')in @else collapsed @endif " href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-image"></i>
+          <span>Sliders</span>
         </a>
-        <div id="collapseTwo" class="collapse @if(Request::segment(2)=='makaleler')show @endif" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="collapseTwo" class="collapse @if(Request::segment(2)=='sliders')show @endif" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Makale İşlemleri:</h6>
-            <a class="collapse-item @if(Request::segment(2)=='makaleler' and !Request::segment(3)) active @endif" href="">Tüm Makaleler</a>
-            <a class="collapse-item @if(Request::segment(2)=='makaleler' and Request::segment(3)=="olustur") active @endif" href="">Makale Oluştur</a>
+            <h6 class="collapse-header">Slider İşlemleri:</h6>
+            <a class="collapse-item @if(Request::segment(2)=='sliders' and !Request::segment(3)) active @endif" href="{{route('admin.sliders.index')}}">Tüm Sliderlar</a>
+            <a class="collapse-item @if(Request::segment(2)=='sliders' and Request::segment(3)=="olustur") active @endif" href="{{route('admin.sliders.create')}}">Slider Oluştur</a>
           </div>
         </div>
       </li>
-      <!-- Sayfa İşleri-->
-      <li class="nav-item">
-        <a class="nav-link  @if(Request::segment(2)=='makaleler')in @else collapsed @endif " href="#" data-toggle="collapse" data-target="#collapsePage" aria-expanded="true" aria-controls="collapsePage">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Sayfalar</span>
-        </a>
-        <div id="collapsePage" class="collapse @if(Request::segment(2)=='sayfalar')show @endif" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Sayfa İşlemleri:</h6>
-            <a class="collapse-item @if(Request::segment(2)=='sayfalar' and !Request::segment(3)) active @endif" href="">Tüm Sayfalar</a>
-            <a class="collapse-item @if(Request::segment(2)=='sayfalar' and Request::segment(3)=="olustur") active @endif" href="">Sayfa Oluştur</a>
-          </div>
-        </div>
-      </li>
+
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item" >
@@ -198,7 +185,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{Auth::user()->name}}</span>
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
