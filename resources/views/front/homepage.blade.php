@@ -10,7 +10,7 @@
         </ol>
         <div class="carousel-inner">
             @foreach ($sliders as $slider)
-            <div class="carousel-item @if($slider->order==$slidersorder->order) active @endif" style="background-image: url('{{$slider->image}}')">
+            <div class="carousel-item @if($slider->order==$sliderorder->order) active @endif" style="background-image: url('{{$slider->image}}')">
                 <div class="carousel-caption d-none d-md-block">
                   <div class="fixed-bottom text-right muted">
                       <p>&copy {{$slider->author}}&nbsp &nbsp</p>

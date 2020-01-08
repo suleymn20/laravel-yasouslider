@@ -31,7 +31,7 @@
 
       <!-- Heading -->
       <div class="sidebar-heading">
-        İçerik Yönetimi
+        Slider Yönetimi
       </div>
 
       <!-- Makale Collapse Menu -->

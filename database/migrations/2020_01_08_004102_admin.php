@@ -18,8 +18,6 @@ class Admin extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('password');
-            $table->datetime('last_login_at')->nullable();
-            $table->string('last_login_ip')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
