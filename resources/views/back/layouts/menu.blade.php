@@ -51,11 +51,18 @@
 
 
       <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item" >
-        <a class="nav-link" @if(Request::segment(2)=='kategoriler') style="color: white !important;" @endif href="">
-          <i class="fas fa-fw fa-list" @if(Request::segment(2)=='kategoriler') style="color: white !important;" @endif></i>
-          <span>Kategoriler</span>
+      <li class="nav-item">
+        <a class="nav-link  @if(!Request::segment(2)=='yoneticiler')in @else collapsed @endif " href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-user"></i>
+          <span>Yöneticiler</span>
         </a>
+        <div id="collapseTwo" class="collapse @if(Request::segment(2)=='yoneticiler')show @endif" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Yönetici İşlemleri:</h6>
+            <a class="collapse-item @if(Request::segment(2)=='yoneticiler' and !Request::segment(3)) active @endif" href="{{route('admin.yoneticiler.index')}}">Tüm Yöneticiler</a>
+            <a class="collapse-item @if(Request::segment(2)=='yoneticiler' and Request::segment(3)=="olustur") active @endif" href="{{route('admin.yoneticiler.create')}}">Yönetici Oluştur</a>
+          </div>
+        </div>
       </li>
 
       <!-- Divider -->
