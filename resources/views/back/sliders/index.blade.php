@@ -1,5 +1,5 @@
 @extends('back.layouts.master')
-@section('title','Mesajlar')
+@section('title','Sliders')
 @section('content')
   <div class="card shadow mb-4">
     <div class="card-header py-4">
@@ -38,11 +38,10 @@
               <td><img src="{{asset($slider->image)}}" width="150px"></td>
               <td>{{$slider->created_at->format('j/m/Y H:i:s')}}</td>
               <td>
-                <input type="checkbox" slider-id="{{$slider->id}}" class="switch" data-on="Okundu" data-onstyle="success" data-off="Okunmadı" data-offstyle="danger" @if($slider->status==1) checked @endif data-toggle="toggle">
+                <input type="checkbox" slider-id="{{$slider->id}}" class="switch" data-on="Yayınlandı" data-onstyle="success" data-off="Yayınlanmadı" data-offstyle="danger" @if($slider->status==1) checked @endif data-toggle="toggle">
               </td>
               <td>{{$slider->ipadres}}</td>
               <td>
-                <a href="" title="Görüntüle" class="btn btn-sm btn-success"><i class="fa fa-eye"></i> </a>
                   <a href="{{route('admin.sliders.edit',$slider->id)}}" title="Düzenle" class="btn btn-sm btn-primary"><i class="fa fa-pen"></i> </a>
                 <a href="{{route('admin.delete.slider',$slider->id)}}" title="Sil" class="btn btn-sm btn-danger"><i class="fa fa-times"></i> </a>
               </td>

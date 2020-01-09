@@ -26,6 +26,10 @@
         <label>Slider Sahibi</label>
         <input type="text" name="author" class="form-control" value="{{$slider->author}}" required></input>
       </div>
+      <div class="form-group">
+        <label>Slider Sahibi E-Postası</label>
+        <input type="text" name="email" class="form-control" value="{{$slider->email}}" required></input>
+      </div>
       <div class="control-group">
         <div class="form-group controls">
           <label>Durum</label>
@@ -34,7 +38,7 @@
           @elseif($slider->adminstatu=='Bekliyor') bg-warning text-white
           @elseif($slider->adminstatu=='Onaylandı') bg-success text-white
           @elseif($slider->adminstatu=='Yönlendirildi') bg-primary text-white @endif" name="adminstatu">
-            <option class="" @if($slider->adminstatu=='Bekliyor') selected @endif>Bekliyor</option>
+            <option @if($slider->adminstatu=='Bekliyor') selected @endif>Bekliyor</option>
             <option @if($slider->adminstatu=='Yönlendirildi') selected @endif>Yönlendirildi</option>
             <option @if($slider->adminstatu=='Reddedildi') selected @endif>Reddedildi</option>
             <option @if($slider->adminstatu=='Onaylandı') selected @endif>Onaylandı</option>

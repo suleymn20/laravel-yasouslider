@@ -27,7 +27,7 @@
       </div>
       <div class="form-group">
         <label>Slider Email</label>
-        <input type="text" name="email" value="{{Auth::user()->email}}" class="form-control" disabled></input>
+        <input type="email" name="email" value="{{Auth::user()->email}}" class="form-control" required></input>
       </div>
       <div class="control-group">
         <div class="form-group controls">

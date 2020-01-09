@@ -113,6 +113,7 @@ class SlidersController extends Controller
     $slider->title=$request->title;
     $slider->author=$request->author;
     $slider->adminstatu=$request->adminstatu;
+    $slider->email=$request->email;
     $slider->titleslug=str_slug($request->title);
 
     if($request->hasFile('image')){

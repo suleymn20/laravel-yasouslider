@@ -19,11 +19,11 @@
       @csrf
       <div class="form-group">
         <label>Yönetici İsmi</label>
-        <input type="text" name="name" class="form-control" value="" required></input>
+        <input type="text" name="name" class="form-control" value="{{old('name')}}" required></input>
       </div>
       <div class="form-group">
         <label>Yönetici E-Postası</label>
-        <input type="text" name="email" class="form-control" value="" required></input>
+        <input type="text" name="email" class="form-control" value="{{old('email')}}" required></input>
       </div>
       <div class="form-group">
         <label>Yönetici Şifre</label>
