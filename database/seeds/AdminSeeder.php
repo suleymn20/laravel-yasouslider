@@ -16,6 +16,8 @@ class AdminSeeder extends Seeder
         'name'=>'Süleyman Ünlü',
         'email'=>'suleymandogus2002@gmail.com',
         'password'=>bcrypt('sd2002uu'),
+        'updated_at'=>now(),
+        'created_at'=>now()
       ]);
     }
 }

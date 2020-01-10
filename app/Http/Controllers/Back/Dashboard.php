@@ -14,8 +14,8 @@ class Dashboard extends Controller
       $sliders=Slider::orderBy('created_at','desc')->get();
       $noyayin=Slider::where('status','0')->count('status');
       $yayinda=Slider::where('status','1')->count('status');
-      $bekliyor=Slider::where('adminstatu','Bekliyor')->count('adminstatu');
-      $onaylanan=Slider::where('adminstatu','Onaylandı')->count('adminstatu');
+      $bekliyor=Slider::where('adminstatu',0)->count('adminstatu');
+      $onaylanan=Slider::where('adminstatu',3)->count('adminstatu');
       return view('back.dashboard',compact('sliders','admins','noyayin','yayinda','bekliyor','onaylanan'));
     }
 }

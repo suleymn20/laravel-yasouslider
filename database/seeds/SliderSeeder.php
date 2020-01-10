@@ -14,7 +14,7 @@ class SliderSeeder extends Seeder
     public function run()
     {
         $faker=Faker::create();
-        for($i=1;$i<10;$i++){
+        for($i=1;$i<2;$i++){
           $title=$faker->sentence(3);
           $author=$faker->name;
           DB::table('sliders')->insert([

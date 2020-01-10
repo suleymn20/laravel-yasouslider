@@ -33,10 +33,10 @@
         <div class="form-group controls">
           <label>Durum</label>
           <select class="form-control" name="adminstatu">
-            <option @if(('adminstatu')=='Bekliyor') selected @endif>Bekliyor</option>
-            <option @if(('adminstatu')=='Yönlendirildi') selected @endif>Yönlendirildi</option>
-            <option @if(('adminstatu')=='Reddedildi') selected @endif>Reddedildi</option>
-            <option @if(('adminstatu')=='Onaylandı') selected @endif>Onaylandı</option>
+            <option @if(('adminstatu')==0) selected @endif value="0">Bekliyor</option>
+            <option @if(('adminstatu')==1) selected @endif value="1">Yönlendirildi</option>
+            <option @if(('adminstatu')==2) selected @endif value="2">Reddedildi</option>
+            <option @if(('adminstatu')==3) selected @endif value="3">Onaylandı</option>
           </select>
           <p class="help-block text-danger"></p>
         </div>

@@ -30,18 +30,22 @@
         <label>Slider Sahibi E-Postası</label>
         <input type="text" name="email" class="form-control" value="{{$slider->email}}" required></input>
       </div>
+      <div class="form-group">
+        <label>Slider Sahibi IP Adresi</label>
+        <input type="text" name="ipadres" class="form-control" value="{{$slider->ipadres}}" disabled></input>
+      </div>
       <div class="control-group">
         <div class="form-group controls">
           <label>Durum</label>
           <select class="form-control
-          @if($slider->adminstatu=='Reddedildi') bg-danger text-white
-          @elseif($slider->adminstatu=='Bekliyor') bg-warning text-white
-          @elseif($slider->adminstatu=='Onaylandı') bg-success text-white
-          @elseif($slider->adminstatu=='Yönlendirildi') bg-primary text-white @endif" name="adminstatu">
-            <option @if($slider->adminstatu=='Bekliyor') selected @endif>Bekliyor</option>
-            <option @if($slider->adminstatu=='Yönlendirildi') selected @endif>Yönlendirildi</option>
-            <option @if($slider->adminstatu=='Reddedildi') selected @endif>Reddedildi</option>
-            <option @if($slider->adminstatu=='Onaylandı') selected @endif>Onaylandı</option>
+          @if($slider->adminstatu==2) bg-danger text-white
+          @elseif($slider->adminstatu==0) bg-warning text-white
+          @elseif($slider->adminstatu==3) bg-success text-white
+          @elseif($slider->adminstatu==1) bg-primary text-white @endif" name="adminstatu">
+            <option @if($slider->adminstatu==0) selected @endif value="0">Bekliyor</option>
+            <option @if($slider->adminstatu==1) selected @endif value="1">Yönlendirildi</option>
+            <option @if($slider->adminstatu==2) selected @endif value="2">Reddedildi</option>
+            <option @if($slider->adminstatu==3) selected @endif value="3">Onaylandı</option>
           </select>
           <p class="help-block text-danger"></p>
         </div>

@@ -102,6 +102,11 @@ class AdminController extends Controller
     $admin->name=$request->name;
     $admin->email=$request->email;
     $admin->password=bcrypt($request->password);
+    if($request->hasFile('image')){
+      $imageName=str_slug($request->name).'.'.$request->image->getClientOriginalExtension();
+      $request->image->move(public_path('uploads/admins'),$imageName);
+      $admin->image='uploads/admins/'.$imageName;
+    }
     $admin->save();
     toastr()->success('Yönetici başarıyla güncellendi', 'Başarılı');
     return redirect()->route('admin.yoneticiler.index');

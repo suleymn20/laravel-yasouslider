@@ -22,7 +22,7 @@ class Sliders extends Migration
             $table->string('titleslug');
             $table->string('authorslug');
             $table->integer('status')->default(0);
-            $table->string('adminstatu')->default('Bekliyor');
+            $table->integer('adminstatu')->default(3);
             $table->integer('order');
             $table->ipAddress('ipadres')->nullable();
             $table->softDeletes();
