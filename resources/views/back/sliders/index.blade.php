@@ -25,18 +25,7 @@
               <th>İşlemler</th>
             </tr>
           </thead>
-          <tfoot>
-            <tr>
-              <th>Slider Başlığı</th>
-              <th>Ad Soyad</th>
-              <th>E-Posta</th>
-              <th>Resmi</th>
-              <th>Gönderme Tarihi</th>
-              <th>Durum</th>
-              <th>Durum</th>
-              <th>İşlemler</th>
-            </tr>
-          </tfoot>
+  
           <tbody>
             @foreach($sliders as $slider)
             <tr>
@@ -61,50 +50,7 @@
             </tr>
           @endforeach
           </tbody>
-        </table><!--
-        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-
-
-          <thead>
-
-            <tr>
-              <th >Slider Başlığı</th>
-              <th>Ad Soyad</th>
-              <th>E-Posta</th>
-              <th>Resmi</th>
-              <th>Gönderme Tarihi</th>
-              <th>Durum</th>
-              <th>Durum</th>
-              <th>İşlemler</th>
-
-            </tr>
-          </thead>
-          @foreach($sliders as $slider)
-          <tbody>
-            <tr>
-              <td> @if($slider->title==null)Belirtilmedi @else {{$slider->title}}@endif</td>
-              <td>@if($slider->author==null)Belirtilmedi @else {{$slider->author}}@endif</td>
-              <td>@if($slider->email==null)Belirtilmedi @else {{$slider->email}}@endif</td>
-              <td><img src="{{asset($slider->image)}}" width="150px"></td>
-              <td>{{$slider->created_at->format('j/m/Y H:i:s')}}</td>
-              <td>
-                <input type="checkbox" slider-id="{{$slider->id}}" class="switch" data-on="Yayınlandı" data-onstyle="success" data-off="Yayınlanmadı" data-offstyle="danger" @if($slider->status==1) checked @endif data-toggle="toggle">
-              </td>
-              <td>
-              @if($slider->adminstatu==0)Bekliyor
-              @elseif($slider->adminstatu==1)Yönlendirildi
-              @elseif($slider->adminstatu==2)Reddedildi
-              @else Onaylı@endif
-              </td>
-              <td>
-                  <a href="{{route('admin.sliders.edit',$slider->id)}}" title="Düzenle" class="btn btn-sm btn-primary"><i class="fa fa-pen"></i> </a>
-                <a href="{{route('admin.delete.slider',$slider->id)}}" title="Sil" class="btn btn-sm btn-danger"><i class="fa fa-times"></i> </a>
-              </td>
-            </tr>
-            <tr>
-            @endforeach
-          </tbody>
-        </table>-->
+        </table>
 
       </div>
     </div>

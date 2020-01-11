@@ -1,9 +1,10 @@
 </div>
 <footer class="sticky-footer bg-white">
 <div class="container my-auto">
-<div class="copyright text-center my-auto">
-<span>Copyright &copy; SNU Blog {{date('Y')}}</span>
-</div>
+  <div class="copyright text-center my-auto">
+        <span>v1.3.5</span><br><br>
+        <span>Copyright &copy; SNU Team 2017 - {{date('Y')}}</span>
+      </div>
 </div>
 </footer>
 <!-- End of Footer -->

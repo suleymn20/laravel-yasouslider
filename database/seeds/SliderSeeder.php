@@ -14,7 +14,7 @@ class SliderSeeder extends Seeder
     public function run()
     {
         $faker=Faker::create();
-        for($i=1;$i<2;$i++){
+        for($i=1;$i<30;$i++){
           $title=$faker->sentence(3);
           $author=$faker->name;
           DB::table('sliders')->insert([
@@ -26,6 +26,7 @@ class SliderSeeder extends Seeder
             'authorslug'=>str_slug($author),
             'order'=>$i,
             'status'=>1,
+            'adminstatu'=>3,
             'created_at'=>$faker->dateTime('now'),
             'updated_at'=>now()
           ]);

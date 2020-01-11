@@ -4,16 +4,15 @@
   <div class="card shadow mb-4">
     <div class="card-header py-4">
       <h6 class="m-0 font-weight-bold text-primary">@yield('title')
-        <span class="float-right">{{$slidersl->count()}} Slider Bulundu</strong>
-        <a href="{{route('admin.trashed.slider')}}" class="btn btn-warning btn-sm"><i class="fa fa-trash"></i> Silinen Sliders</a>
+        <span class="float-right">{{$slidersl->count()}} Silinen Slider Bulundu</strong>
+        <a href="{{route('admin.sliders.index')}}" class="btn btn-primary btn-sm"><i class="fa fa-reply"></i> Sliderlara Geri Dön</a>
       </h6>
     </div>
     <div class="card-body bg-light">
 
 
       <div class="table-responsive">
-        <table class="table table-hover table-light rounded dtBasicExample shadow" width="100%" cellspacing="0">
-          <input class="form-control bg-light  border border-primary shadow" id="myInput" type="text" placeholder="Arama Yap.."><br>
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
           <thead>
 
@@ -28,21 +27,22 @@
 
             </tr>
           </thead>
-          @foreach($slidersl as $slider)
-          <tbody id="myTable">
+
+          <tbody>
+            @foreach($slidersl as $slider)
             <tr>
-              <td> @if($slider->title==null)Belirtilmedi @else {{$slider->title}}@endif</td>
-              <td>@if($slider->author==null)Belirtilmedi @else {{$slider->author}}@endif</td>
-              <td>@if($slider->email==null)Belirtilmedi @else {{$slider->email}}@endif</td>
+              <td>{{$slider->title}}</td>
+              <td>{{$slider->author}}</td>
+              <td>{{$slider->email}}</td>
               <td><img src="{{asset($slider->image)}}" width="150px"></td>
-              <td>{{$slider->created_at->format('j/m/Y H:i:s')}}</td>
+              <td>{{$slider->deleted_at->format('d/m/Y H:m')}}</td>
               <td>{{$slider->ipadres}}</td>
               <td>
                   <a href="{{route('admin.recover.slider',$slider->id)}}" title="Kurtar" class="btn btn-sm btn-primary"><i class="fa fa-recycle"></i> </a>
                   <a href="{{route('admin.hard.delete.slider',$slider->id)}}" title="Sil" class="btn btn-sm btn-danger"><i class="fa fa-times"></i> </a>
               </td>
             </tr>
-            <tr>
+
             @endforeach
           </tbody>
         </table>

@@ -12,8 +12,7 @@
 
 
       <div class="table-responsive">
-        <table class="table table-hover table-light rounded shadow" width="100%" cellspacing="0">
-          <input class="form-control bg-light shadow" id="myInput" type="text" placeholder="Arama Yap.."><br>
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
           <thead>
 
@@ -27,8 +26,9 @@
 
             </tr>
           </thead>
-          @foreach($admins as $admin)
-          <tbody id="myTable">
+
+          <tbody>
+            @foreach($admins as $admin)
             <tr>
               <th scope="row">{{$admin->id}}</th>
               <td>{{$admin->name}}</td>
@@ -40,7 +40,6 @@
                   <a href="{{route('admin.yoneticiler.edit',$admin->id)}}" title="Düzenle" class="btn btn-sm btn-primary"><i class="fa fa-pen"></i> </a>
               </td>
             </tr>
-            <tr>
             @endforeach
           </tbody>
         </table>
