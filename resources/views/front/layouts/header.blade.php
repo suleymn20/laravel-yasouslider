@@ -10,6 +10,7 @@
   <link rel="shortcut icon" type="image/x-icon" href="{{asset('back/')}}/favicon.png" />
   <link rel="shortcut icon" type="image/png" href="">
   <title>@yield('title')</title>
+  <meta http-equiv="refresh" content="1800;">
   @toastr_css
 
   <!-- Bootstrap core CSS -->

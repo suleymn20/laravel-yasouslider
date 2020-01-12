@@ -48,15 +48,13 @@
           </div>
         </div>
       </li>
-
-
-      <!-- Nav Item - Utilities Collapse Menu -->
+      <!-- Sayfa İşleri-->
       <li class="nav-item">
-        <a class="nav-link  @if(!Request::segment(2)=='yoneticiler')in @else collapsed @endif " href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+        <a class="nav-link  @if(Request::segment(2)=='yoneticiler')in @else collapsed @endif " href="#" data-toggle="collapse" data-target="#collapsePage" aria-expanded="true" aria-controls="collapsePage">
           <i class="fas fa-fw fa-user"></i>
           <span>Yöneticiler</span>
         </a>
-        <div id="collapseTwo" class="collapse @if(Request::segment(2)=='yoneticiler')show @endif" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="collapsePage" class="collapse @if(Request::segment(2)=='yoneticiler')show @endif" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Yönetici İşlemleri:</h6>
             <a class="collapse-item @if(Request::segment(2)=='yoneticiler' and !Request::segment(3)) active @endif" href="{{route('admin.yoneticiler.index')}}">Tüm Yöneticiler</a>
