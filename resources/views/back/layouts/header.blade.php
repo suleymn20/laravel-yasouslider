@@ -10,7 +10,11 @@
   <meta name="author" content="">
   <link rel="shortcut icon" type="image/x-icon" href="{{asset('back/')}}/favicon.png" />
   @yield('css')
-
+<style media="screen">
+#text{
+display:none;
+}
+</style>
 
   <title>@yield('title','Admin Paneli - SNU Blog')</title>
 

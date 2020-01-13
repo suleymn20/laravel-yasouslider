@@ -85,11 +85,69 @@
                   <h6 class="m-0 font-weight-bold text-primary">Sürüm Notları</h6>
                 </div>
                 <div class="card-body">
-                  <p class="text-center font-weight-bold">Yakında</p>
+                  <p class="text-center font-weight-bold">v1.3.5.1|(a)|(b)</p>
                   <ul>
-                    <li>Yakında</li>
+                    <li>Menü hataları düzeltildi. </li>
+                    <li>Homepage Reflesh olayı yapıldı.</li>
+                    <li>Mesaj kutusu kaldırıldı </li>
+                    <li>Küçük iyileştirmeler yapıldı </li>
                   </ul>
                   <hr>
+                  <p class="text-center font-weight-bold">v1.3.5</p>
+                  <ul>
+                    <li>Yönetici avatar yükleme yapıldı</li>
+                    <li>adminstatu interger yapıldı.</li>
+                  </ul>
+                  <div id="text">
+                  <hr>
+                  <p class="text-center font-weight-bold">v1.3.4</p>
+                  <ul>
+                    <li>Yönetici ekleme çıkar işlemi yapıldı</li>
+                    <li>Küçük iyileştirmeler yapıldı.</li>
+                  </ul>
+                  <hr>
+                  <p class="text-center font-weight-bold">v1.3.3</p>
+                  <ul>
+                    <li>Slider listeme, silme ve düzenmele işlemleri yapıldı.</li>
+                  </ul>
+                  <hr>
+                  <p class="text-center font-weight-bold">v1.3.2</p>
+                  <ul>
+                    <li>Güvenlik işlemleri yapıldı.</li>
+                  </ul>
+                  <hr>
+                  <p class="text-center font-weight-bold">v1.3.1</p>
+                  <ul>
+                    <li>Yönetici giriş çıkış işlemleri yapıldı.</li>
+                  </ul>
+                  <hr>
+                  <p class="text-center font-weight-bold">v1.3.0</p>
+                  <ul>
+                    <li>Yönetici panelinin temelleri atıldı</li>
+                  </ul>
+                  <hr>
+                  <p class="text-center font-weight-bold">v1.2.1</p>
+                  <ul>
+                    <li>Toastr paketi yüklendi.</li>
+                    <li>Türkçeleştirme yapıldı</li>
+                  </ul>
+                  <hr>
+                  <p class="text-center font-weight-bold">v1.2.0</p>
+                  <ul>
+                    <li>Slider ekleme işlemleri yapıldı</li>
+                  </ul>
+                  <hr>
+                  <p class="text-center font-weight-bold">v1.1</p>
+                  <ul>
+                    <li>Front kısmı bitti Faker yardımıyla test edildi.</li>
+                  </ul>
+                  <hr>
+                  <p class="text-center font-weight-bold">v1.0</p>
+                  <ul>
+                    <li>(Front için zemin hazırlandı.)</li>
+                  </ul>
+                </div>
+                  <button class="btn btn-success btn-sm btn-block" id="toggle">Read More</button>
                 </div>
               </div>
 
@@ -109,6 +167,8 @@
                   <p><b>Yapan ve Yöneten: </b>Süleyman Ünlü</p>
                   <hr>
                   <p><b>Sunucu ve SSL İşlemleri: </b>Yana Gavrilina</p>
+                  <hr>
+                  <p><b>Tasarım İşlemleri: </b>Yana Gavrilina</p>
                   <hr>
                   <p><b>Tester: </b>Mert Öztürk</p>
                   <hr>

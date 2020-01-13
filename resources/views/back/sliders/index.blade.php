@@ -17,23 +17,25 @@
             <tr>
               <th>Slider Başlığı</th>
               <th>Ad Soyad</th>
-              <th>E-Posta</th>
               <th>Resmi</th>
               <th>Gönderme Tarihi</th>
+              <th>Güncelleme Tarihi</th>
+              <th>IP Adresi</th>
               <th>Durum</th>
               <th>Durum</th>
               <th>İşlemler</th>
             </tr>
           </thead>
-  
+
           <tbody>
             @foreach($sliders as $slider)
             <tr>
-              <td> @if($slider->title==null)Belirtilmedi @else {{$slider->title}}@endif</td>
-              <td>@if($slider->author==null)Belirtilmedi @else {{$slider->author}}@endif</td>
-              <td>@if($slider->email==null)Belirtilmedi @else {{$slider->email}}@endif</td>
-              <td><img src="{{asset($slider->image)}}" width="150px"></td>
-              <td>{{$slider->created_at->format('j/m/Y H:i:s')}}</td>
+              <td>{{$slider->title}}</td>
+              <td>{{$slider->author}}</td>
+              <td><img src="{{asset($slider->image)}}" width="120px"></td>
+              <td>{{$slider->created_at->format('d/m/Y H:i')}}</td>
+              <td>{{$slider->updated_at->format('d/m/Y H:i')}}</td>
+              <td>{{$slider->ipadres}}</td>
               <td>
                 <input type="checkbox" slider-id="{{$slider->id}}" class="switch" data-on="Yayınlandı" data-onstyle="success" data-off="Yayınlanmadı" data-offstyle="danger" @if($slider->status==1) checked @endif data-toggle="toggle">
               </td>
