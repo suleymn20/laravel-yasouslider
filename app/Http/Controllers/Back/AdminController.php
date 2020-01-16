@@ -95,13 +95,14 @@ class AdminController extends Controller
       $request->validate([
         'name' => 'required',
         'email' => 'required|email',
-        'password' => 'required|min:6|confirmed'
     ]);
 
     $admin=Admin::findOrFail($id);
     $admin->name=$request->name;
     $admin->email=$request->email;
-    $admin->password=bcrypt($request->password);
+    if(!$request->password==null){
+      $admin->password=bcrypt($request->password);
+    }
     if($request->hasFile('image')){
       $imageName=str_slug($request->name).'.'.$request->image->getClientOriginalExtension();
       $request->image->move(public_path('uploads/admins'),$imageName);
@@ -109,7 +110,7 @@ class AdminController extends Controller
     }
     $admin->save();
     toastr()->success('Yönetici başarıyla güncellendi', 'Başarılı');
-    return redirect()->route('admin.yoneticiler.index');
+    return redirect()->back();
     }
 
     /**

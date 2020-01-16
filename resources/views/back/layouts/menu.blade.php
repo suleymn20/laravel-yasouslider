@@ -48,6 +48,7 @@
           </div>
         </div>
       </li>
+      @if(Auth::user()->id==1)
       <!-- Sayfa İşleri-->
       <li class="nav-item">
         <a class="nav-link  @if(Request::segment(2)=='yoneticiler')in @else collapsed @endif " href="#" data-toggle="collapse" data-target="#collapsePage" aria-expanded="true" aria-controls="collapsePage">
@@ -62,7 +63,7 @@
           </div>
         </div>
       </li>
-
+@endif
       <!-- Divider -->
       <hr class="sidebar-divider">
 
@@ -71,8 +72,8 @@
         Site Ayarları
       </div>
       <li class="nav-item">
-        <a class="nav-link" href="">
-          <i class="fas fa-fw fa-cog"></i>
+        <a class="nav-link" @if(Request::segment(2)=='ayarlar') style="color: white !important; @endif" href="{{route('admin.config.index')}}">
+          <i class="fas fa-fw fa-cog" @if(Request::segment(2)=='ayarlar') style="color: white !important;" @endif></i>
           <span>Ayarlar</span></a>
       </li>
 
@@ -107,24 +108,7 @@
           <ul class="navbar-nav ml-auto">
 
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-            <li class="nav-item dropdown no-arrow d-sm-none">
-              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-search fa-fw"></i>
-              </a>
-              <!-- Dropdown - Messages -->
-              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-                <form class="form-inline mr-auto w-100 navbar-search">
-                  <div class="input-group">
-                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                    <div class="input-group-append">
-                      <button class="btn btn-primary" type="button">
-                        <i class="fas fa-search fa-sm"></i>
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </li>
+
 
             <!-- Nav Item - Alerts -->
 
@@ -136,11 +120,11 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{Auth::user()->name}}</span>
-                <img class="img-profile rounded-circle" src="@if(Auth::user()->image==null)https://source.unsplash.com/QAB-WJcbgJk/60x60 @else {{asset(Auth::user()->image)}} @endif">
+                <img class="img-profile rounded-circle" src="@if(Auth::user()->image==null) {{asset('image/')}}/hacker.svg @else {{asset(Auth::user()->image)}} @endif">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="{{route('admin.yoneticiler.edit',Auth::user()->id)}}">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>

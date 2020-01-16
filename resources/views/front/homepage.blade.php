@@ -1,22 +1,22 @@
 @extends('front.layouts.master')
-@section('title','YasouSlider')
+@section('title',$config->sitename)
 
 @section('content')
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-          @foreach ($sliders->slice(0,10) as $slider)
+          @foreach ($sliders->slice(0,$config->ordercount) as $slider)
             <li data-target="#carouselExampleIndicators" data-slide-to="{{$slider->order}}" class="@if($slider->order==$sliderorder->order) active @endif"></li>
           @endforeach
         </ol>
         <div class="carousel-inner">
-            @foreach ($sliders->slice(0,10) as $slider)
+            @foreach ($sliders->slice(0,$config->ordercount) as $slider)
             <div class="carousel-item @if($slider->order==$sliderorder->order) active @endif" style="background-image: url('{{$slider->image}}')">
                 <div class="carousel-caption d-none d-md-block">
                   <div class="fixed-bottom text-right muted">
-                      <p>&copy {{$slider->author}}&nbsp &nbsp</p>
+                      <p> @if($config->copyright==1) &copy @endif @if($config->author==1){{$slider->author}}&nbsp &nbsp @endif</p>
                   </div>
                   <div class="fixed-bottom text-left muted">
-                    <p>&nbsp &nbsp{{$slider->title}}</p>
+                    <p>@if($config->title)&nbsp &nbsp{{$slider->title}}@endif</p>
                   </div>
                 </div>
             </div>

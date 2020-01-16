@@ -9,14 +9,21 @@ use Mail;
 use Validator;
 //Models
 use App\Models\Slider;
+use App\Models\Config;
 
 class Homepage extends Controller
 {
+  public function __construct(){
+      if(Config::find(1)->active==0){
+        return redirect()->to('site-bakimda')->send();
+      }
+    }
 
     public function index(){
+      $config=Config::find(1);
       $sliders=Slider::orderBy('order','desc')->where('status',1)->where('adminstatu',3)->get();
       $sliderorder=Slider::latest()->where('status',1)->where('adminstatu',3)->first();
-      return view('front.homepage',compact('sliders','sliderorder'));
+      return view('front.homepage',compact('sliders','sliderorder','config'));
     }
     public function slideradd(){
       return view('front.slideradd');
