@@ -48,8 +48,11 @@
         </div>
         <div class="row">
           <div class="col-md-6">
-            <label>Site Logo</label>
-            <input type="file" class="form-control" name="logo"/>
+            <label>Slider Kontrol Buttonlar Gözükmesi</label>
+            <select class="form-control" name="sliderkontrol">
+              <option @if($config->sliderkontrol==1) selected @endif value="1">Gözüksün</option>
+              <option @if($config->sliderkontrol==0) selected @endif value="0">Gözükmesin</option>
+            </select>
           </div>
           <div class="col-md-6">
             <label>Site Favicon</label>

@@ -23,6 +23,7 @@ class ConfigController extends Controller
       $config->copyright=$request->copyright;
       $config->author=$request->author;
       $config->title=$request->title;
+      $config->sliderkontol=$request->sliderkontrol;
       $config->ordercount=$request->ordercount;
       $config->active=$request->active;
 

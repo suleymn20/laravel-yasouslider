@@ -22,6 +22,7 @@ class Configs extends Migration
             $table->integer('copyright')->default(1);
             $table->integer('author')->default(1);
             $table->string('title')->default(1);
+            $table->string('sliderkontol')->default(1);
             $table->string('ordercount')->default(10);
             $table->timestamps();
         });
