@@ -11,7 +11,7 @@
         <div class="row">
           <div class="col-md-6">
             <label>Site Adı</label>
-            <input type="text" name="title" required class="form-control" value="{{$config->title}}">
+            <input type="text" name="sitename" required class="form-control" value="{{$config->sitename}}">
           </div>
           <div class="col-md-6">
             <label>Site Aktiflik Durumu</label>
@@ -19,6 +19,31 @@
               <option @if($config->active==1) selected @endif value="1">Açık</option>
               <option @if($config->active==0) selected @endif value="0">Kapalı</option>
             </select>
+          </div>
+          <div class="col-md-6">
+            <label>Copyright Aktiflik Durumu</label>
+            <select class="form-control" name="copyright">
+              <option @if($config->copyright==1) selected @endif value="1">Gözüksün</option>
+              <option @if($config->copyright==0) selected @endif value="0">Gözükmesin</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label>Author Aktiflik Durumu</label>
+            <select class="form-control" name="author">
+              <option @if($config->author==1) selected @endif value="1">Gözüksün</option>
+              <option @if($config->author==0) selected @endif value="0">Gözükmesin</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label>Slider Başlığı Aktiflik Durumu</label>
+            <select class="form-control" name="title">
+              <option @if($config->title==1) selected @endif value="1">Gözüksün</option>
+              <option @if($config->title==0) selected @endif value="0">Gözükmesin</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label>Slider Sıralama Kaç Olsun</label>
+            <input type="number" name="ordercount" class="form-control" value="{{$config->ordercount}}">
           </div>
         </div>
         <div class="row">
@@ -29,32 +54,6 @@
           <div class="col-md-6">
             <label>Site Favicon</label>
             <input type="file" class="form-control" name="favicon"/>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <label>Facebook</label>
-            <input type="text" name="facebook" class="form-control" value="{{$config->facebook}}">
-          </div>
-          <div class="col-md-6">
-            <label>Twitter</label>
-              <input type="text" name="twitter" class="form-control" value="{{$config->twitter}}">
-          </div>
-          <div class="col-md-6">
-            <label>Github</label>
-            <input type="text" name="github" class="form-control" value="{{$config->github}}">
-          </div>
-          <div class="col-md-6">
-            <label>Youtube</label>
-              <input type="text" name="youtube" class="form-control" value="{{$config->youtube}}">
-          </div>
-          <div class="col-md-6">
-            <label>Linkedin</label>
-            <input type="text" name="linkedin" class="form-control" value="{{$config->linkedin}}">
-          </div>
-          <div class="col-md-6">
-            <label>Instagram</label>
-              <input type="text" name="instagram" class="form-control" value="{{$config->instagram}}">
           </div>
         </div><br>
         <div class="form-group">

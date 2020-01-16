@@ -43,7 +43,7 @@
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Yayinlanan Slidirlar</div>
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Yayinlanan Sliderlar</div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">{{$yayinda}}</div>
                     </div>
                     <div class="col-auto">
@@ -85,6 +85,14 @@
                   <h6 class="m-0 font-weight-bold text-primary">Sürüm Notları</h6>
                 </div>
                 <div class="card-body">
+                  <p class="text-center font-weight-bold">v1.4.0</p>
+                  <ul>
+                    <li>Ayarlar Kısmı Eklendi </li>
+                    <li>Güvenlik için yöneticiler kımı kısıtlandı.</li>
+                    <li>Homepage düzenlendi </li>
+                    <li>Küçük iyileştirmeler yapıldı </li>
+                  </ul>
+                  <hr>
                   <p class="text-center font-weight-bold">v1.3.5.1|(a)|(b)</p>
                   <ul>
                     <li>Menü hataları düzeltildi. </li>
@@ -154,10 +162,6 @@
             </div>
 
             <div class="col-lg-6 mb-4">
-
-              <!-- Illustrations -->
-
-
               <!-- Approach -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">

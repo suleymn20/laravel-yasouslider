@@ -12,8 +12,8 @@
 
 
       <div class="table-responsive">
-        <table class="table table-hover table-dark rounded shadow" width="100%" cellspacing="0">
-          <input class="form-control bg-dark text-white border border-dark shadow" id="myInput" type="text" placeholder="Arama Yap.."><br>
+          <table class="table table-bordered table-dark" id="dataTable" width="100%" cellspacing="0">
+
 
           <thead>
 
@@ -40,7 +40,6 @@
                   <a href="{{route('admin.hard.delete.admin',$admin->id)}}" title="Sil" class="btn btn-sm btn-danger"><i class="fa fa-times"></i> </a>
               </td>
             </tr>
-            <tr>
             @endforeach
           </tbody>
         </table>
@@ -64,7 +63,6 @@ $(document).ready(function(){
 });
 </script>
 
-  <
 <script src="{{asset('back/')}}/vendor/datatables/jquery.dataTables.min.js"></script>
 <script src="{{asset('back/')}}/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 

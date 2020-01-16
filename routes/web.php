@@ -5,7 +5,9 @@
 |--------------------------------------------------------------------------
 |
 */
-
+Route::get('site-bakimda',function(){
+  return view('front.offline');
+});
 Route::prefix('admin')->name('admin.')->middleware('isLogin')->group(function(){
   Route::get('giris','Back\AuthController@login')->name('login');
   Route::post('giris','Back\AuthController@loginPost')->name('login.post');
@@ -22,11 +24,13 @@ Route::prefix('admin')->name('admin.')->middleware('isAdmin')->group(function(){
   Route::get('/recover/{id}','Back\SlidersController@recover')->name('recover.slider');
   //admin Route
   Route::resource('yoneticiler','Back\AdminController');
-
   Route::get('/deletemesajadmin/{id}','Back\AdminController@delete')->name('delete.admin');
 
   Route::get('/harddeletemesajadmin/{id}','Back\AdminController@hardDelete')->name('hard.delete.admin');
   Route::get('/recoveradmin/{id}','Back\AdminController@recover')->name('recover.admin');
+  //ayarlar route
+  Route::get('/ayarlar','Back\ConfigController@index')->name('config.index');
+  Route::post('/ayarlar/update','Back\ConfigController@update')->name('config.update');
   //
   Route::get('cikis','Back\AuthController@logout')->name('logout');
 });
